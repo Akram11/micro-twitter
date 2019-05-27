@@ -5,12 +5,19 @@ import { TiArrowBackOutline, TiHeartOutline, TiHeartFullOutline } from 'react-ic
 
 
 class Tweet extends Component {
+
+
     handleLike = (e) => {
         e.preventDefault()
 
         // todo: Handle Like Tweet
     }
 
+    toParent = (e, id) => {
+        e.preventDefault()
+        // todo: Redirect to parent Tweet.
+    }
+    
     render() {
         const { tweet } = this.props
         const { name, avatar, timestamp, text, hasLiked, likes, replies, parent } = tweet
