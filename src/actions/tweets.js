@@ -1,7 +1,7 @@
 import { saveLikeToggle } from '../utils/api'
 
 export const RECEIVE_TWEETS = 'RECEIVE_TWEETS'
-export const TOGGLE_LIKE = 'TOGGLE_LIKE'
+export const TOGGLE_TWEET = 'TOGGLE_TWEET'
 
 
 export function receiveTweets(tweets) {
@@ -11,9 +11,9 @@ export function receiveTweets(tweets) {
     }
 }
 
-function toggleTweet(id, hasLiked, authedUser) {
+function toggleTweet({id, hasLiked, authedUser}) {
     return {
-        type: TOGGLE_LIKE,
+        type: TOGGLE_TWEET,
         id,
         authedUser,
         hasLiked
