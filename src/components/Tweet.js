@@ -21,7 +21,7 @@ class Tweet extends Component {
   }
   toParent = (e, id) => {
     e.preventDefault()
-    // todo: Redirect to parent Tweet.
+    this.props.history.push(`/tweet/${id}`)
   }
   render() {
     const { tweet } = this.props
@@ -75,4 +75,4 @@ function mapStateToProps ({authedUser, users, tweets}, { id }) {
       : null
   }
 }
-export default connect(mapStateToProps)(Tweet)
+export default withRouter(connect(mapStateToProps)(Tweet))
