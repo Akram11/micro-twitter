@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { formatTweet, formatDate } from '../utils/helpers'
 import { handleToggleTweet } from '../actions/tweets'
 import { TiArrowBackOutline,TiHeartOutline, TiHeartFullOutline } from 'react-icons/ti';
+import { Link, withRouter } from 'react-router-dom'
 
 
 
@@ -26,13 +27,13 @@ class Tweet extends Component {
     const { tweet } = this.props
 
     if (tweet === null) {
-      return <p>This Tweet doesn't existd</p>
+      return <p>This Tweet doesn't exist</p>
     }
     const {
-      name, avatar, timestamp, text, hasLiked, likes, replies, parent
+      name, avatar, timestamp, text, hasLiked, likes, replies, parent, id
     } = tweet
     return (
-      <div className='tweet'>
+      <Link to={`/tweet/${id}`} className='tweet'>
         <img
           src={avatar}
           alt={`Avatar of ${name}`}
@@ -60,7 +61,7 @@ class Tweet extends Component {
             <span>{likes !== 0 && likes}</span>
           </div>
         </div>
-      </div>
+      </Link>
     )
   }
 }
