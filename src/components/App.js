@@ -18,20 +18,21 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <Fragment>
           <LoadingBar />
-          <Nav/>
-          {this.props.loading === true
-            ? null
-            : <div>
-               <Route path='/' exact  component={Dashboard}/>
-               <Route path='/tweet/:id' component={TweetPage}/>
-               <Route path='/new' component={NewTweet}/>
+          <div className="container">
+            <Nav />
+            {this.props.loading === true
+              ? null
+              : <div>
+                <Route path='/' exact component={Dashboard} />
+                <Route path='/tweet/:id' component={TweetPage} />
+                <Route path='/new' component={NewTweet} />
               </div>
             }
-        </div>
+          </div>
+        </Fragment>
       </Router>
-
     )
   }
 }
