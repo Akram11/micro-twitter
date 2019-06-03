@@ -34,8 +34,8 @@ class NewTweet extends Component {
     render() {
         const { text, ToHome } = this.state
         const tweetLeft = 280 - text.length
-        if (ToHome === true){
-            return(
+        if (ToHome === true) {
+            return (
                 <Redirect to='/' />
             )
         }
