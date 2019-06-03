@@ -4,7 +4,7 @@ import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
 import authedUser from '../reducers/authedUser';
 import LoadingBar from 'react-redux-loading'
-import NewTweet from './NewTweet'
+import NewTweet from './NewTweet';
 import TweetPage from './TweetPage';
 
 
